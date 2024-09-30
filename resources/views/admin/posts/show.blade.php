@@ -23,8 +23,9 @@
             <li>Collaboratori: {{ $post->collaborators }}</li>
             <li>Argomento: {{ $post->argument }}</li>
         </ul>
-        <div class="container mb-5">
-            <img src="{{ asset('storage/' . $post->path_image) }}" alt="{{ $post->image_original_name }}" class="img-fluid" onerror="this.src='/img/no-image.jpg'">
+        <div class="container mb-3">
+            <img class="img-fluid" src="{{ asset('storage/' . $post->path_image) }}" alt="{{ $post->image_name }}"><br>
+            <span class="mt-3">Nome originale: {{ $post->image_name }}</span>
         </div>
         <a href="{{ route('admin.posts.index') }}" class="btn btn-primary">Torna alla lista</a>
     </div>

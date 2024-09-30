@@ -12,7 +12,9 @@
     </head>
     <body>
         <ul class="list-group list-group-flush">
-            <li class="list-group-item"><a href="{{ route('admin.posts.index') }}">Lista</a></li>
+            <li class="list-group-item"><a href="{{ route('admin.posts.index') }}">Lista Post</a></li>
+            <li class="list-group-item"><a href="{{ route('admin.posts.index') }}">Lista Tipi</a></li>
+            <li class="list-group-item"><a href="{{ route('admin.posts.index') }}">Lista Tecnologie</a></li>
             <li class="list-group-item"><a href="{{ route('admin.posts.create') }}">Crea</a></li>
             <li class="list-group-item"><a href="{{ route('admin.typePosts') }}">Post raggruppato in tipo</a></li>
             <li class="list-group-item"><a href="{{ route('admin.types.index') }}">Gestione tipo</a></li>

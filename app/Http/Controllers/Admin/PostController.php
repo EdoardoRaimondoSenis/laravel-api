@@ -37,19 +37,15 @@ class PostController extends Controller
     public function store(PostsRequest $request)
     {
         $data = $request->all();
-
+        if(array_key_exists('path_image', $data)) {
+            
+            $img_path = Storage::put('uploads', $data['path_image']);
+            $image_name = $request->file('path_image')->getClientOriginalName();
+            $data['path_image'] = $img_path;
+            $data['image_name'] = $image_name;
+        }
+        
         $post = Post::create($data);
-
-        if (array_key_exists('technologies', $data)) {
-            $post->technologies()->attach($data['technologies']);
-        }
-
-        if (array_key_exists(key:'img',array: $data)) {
-            $img = Storage::put(path:'uploads',contents: $data['img']);
-            $img_original_name = $request->file(key:'img')->getClientOriginalName();
-            $data['img'] = $img;
-            $data['img_original_name'] = $img_original_name;
-        }
 
         return redirect()->route('admin.posts.show', $post);
     }

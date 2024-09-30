@@ -63,9 +63,9 @@
             <div class="alert alert-danger error">{{ $message }}</div>
         @enderror
 
-        <label class="form-label" for="image">Immagine:</label>
-        <input class="form-control" type="file" name="image" id="image">
-        @error('image')
+        <label class="form-label" for="path_image">Immagine:</label>
+        <input class="form-control" type="file" name="path_image" id="path_image">
+        @error('path_image')
             <div class="alert alert-danger error">{{ $message }}</div>
         @enderror
 
