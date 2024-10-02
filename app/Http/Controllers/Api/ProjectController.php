@@ -21,7 +21,7 @@ class ProjectController extends Controller
             $success = false;
         }
 
-        return Response()->json(compact('posts'));
+        return response()->json(compact('posts', 'success'));
     }
 
     public function technologies()
@@ -34,7 +34,7 @@ class ProjectController extends Controller
             $success = false;
         }
 
-        return response()->json($technologies);
+        return response()->json(compact('technologies', 'success'));	
     }
 
 
@@ -49,6 +49,20 @@ class ProjectController extends Controller
             $success = false;
         }
 
-        return response()->json($types);
+        return response()->json(compact('types', 'success'));
+    }
+
+    public function id()
+    {
+        
+        $id = Post::all()->with('id');
+
+        if($id) {
+            $success = true;
+        } else {
+            $success = false;
+        }
+
+        return response()->json(compact('id', 'success'));
     }
 }
