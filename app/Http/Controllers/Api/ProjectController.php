@@ -52,10 +52,10 @@ class ProjectController extends Controller
         return response()->json(compact('types', 'success'));
     }
 
-    public function id()
+    public function id($id)
     {
         
-        $id = Post::all()->with('id');
+        $id = Post::find($id);
 
         if($id) {
             $success = true;

@@ -21,4 +21,4 @@ Route::get('/technologies', [ProjectController::class, 'technologies']);
 
 Route::get('/types', [ProjectController::class, 'types']);
 
-Route::get('/id', [ProjectController::class, 'id']);
+Route::get('/posts/{id}', [ProjectController::class, 'id']);
